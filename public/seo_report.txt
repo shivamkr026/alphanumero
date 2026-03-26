@@ -1,0 +1,456 @@
+ALPHA NUMERO UNO
+alphanumerouno.in
+WEBSITE REBUILD — MASTER BUILD DOCUMENT
+Fix Report · Missing Pages · AI Prompt · Post-Launch Checklist
+March 2026  ·  For use with Antigravity AI Builder
+HOW TO USE THIS DOCUMENT
+This document has three parts:
+PART A (Sections 1–3): What is wrong, what is missing, and exactly what data to pull from the Netlify reference site.
+PART B (Section 4): The full AI builder prompt for Antigravity — copy-paste ready.
+PART C (Section 5): Post-launch checklist — things to do after the site goes live.
+CORE PRINCIPLE: The existing alphanumerouno.in data is correct and stays unchanged. We are ONLY fixing broken things and adding missing pages. No content changes to index.html, services.html, clients.html, or free-audit.html — except the specific fixes listed.
+SECTION 1 — WHAT IS BROKEN (Audit Report Summary)
+Sourced from the Full Website Audit Report, March 2026. Every issue is categorised, prioritised, and cross-referenced to the fix in Section 2.
+1.1 — Critical Issues (Fix Before Launch)
+ISSUE
+AFFECTED FILE(S)
+FIX REFERENCE
+about.html returns 404 — nav link dead
+index.html nav
+Section 2.1
+contact.html returns 404 — every CTA on homepage and services page is broken
+index.html, services.html
+Section 2.1
+privacy.html returns 404 — footer link opens WhatsApp instead
+All pages (footer)
+Section 2.1
+terms.html returns 404 — footer link opens WhatsApp instead
+All pages (footer)
+Section 2.1
+sitemap.xml missing — Google cannot discover pages
+Root
+Section 2.2
+robots.txt not accessible — crawler behaviour undefined
+Root
+Section 2.2
+AI Audit backend non-functional — user pays ₹199 and receives nothing (report shows all dashes)
+free-audit.html
+Section 2.3
+Fake live counter '47 Bangalore businesses ran their audit today' — hardcoded, deceptive, legal risk
+free-audit.html
+Section 2.3
+UPI QR payment with no webhook — anyone can click 'I've Paid' without paying
+free-audit.html
+Section 2.3
+GSTIN shown as 'Update in Admin' — placeholder not replaced
+All pages (footer)
+Section 2.4
+Privacy & Terms footer links point to WhatsApp — not actual pages
+All pages (footer)
+Section 2.4
+1.2 — High Priority Issues
+ISSUE
+AFFECTED FILE(S)
+FIX REFERENCE
+Navigation is inconsistent across pages — homepage/services have About+Contact missing from nav
+services.html, clients.html, free-audit.html
+Section 2.4
+Footer copyright: homepage says 2024, others say 2026
+index.html footer
+Section 2.4
+Company name inconsistent: 'Numero Uno Marketing' vs 'Alpha Numero Uno' in different places
+All pages
+Section 2.4
+No Google Business Profile integration or link visible anywhere
+index.html
+Section 5 (post-launch)
+Zero backlinks — domain has no authority
+Off-page
+Section 5 (post-launch)
+Hostinger affiliate links in audit report output — undisclosed commercial placement
+free-audit.html
+Section 2.3
+1.3 — Medium Priority Issues
+ISSUE
+AFFECTED FILE(S)
+FIX REFERENCE
+'1,200+ Indian businesses' on audit page contradicts '17+ brands' on clients page
+free-audit.html, clients.html
+Section 2.3
+Footer 'AI Audit — ₹199' link — product name inconsistent (some say 'Free Audit')
+All footers
+Section 2.4
+Pricing shown without clear deliverable specs on some cards
+services.html
+Existing content — no change needed
+No blog section / content strategy
+Root
+Section 5 (post-launch)
+Hashtags in testimonial cards look unprofessional
+clients.html
+Minor — optional cleanup
+SECTION 2 — EXACT FIXES REQUIRED
+2.1 — Build These 4 Missing Pages (New Files)
+These 4 files DO NOT EXIST on alphanumerouno.in. They must be created from scratch. Content comes from numerounomarketing.netlify.app (scraped March 2026) and is listed in full in Section 3.
+File 1: about.html
+REQUIREMENT
+DETAIL
+Nav link that needs to work
+index.html nav already has 'About Us' — it will link once file exists
+Design style
+Match exactly: same dark background, same CSS variables, same nav, same footer as index.html
+Sections to include
+Hero headline + Founder section + 6 USP cards + Stats bar + CTA
+Data source
+See Section 3.1 for all About page content
+File 2: contact.html
+REQUIREMENT
+DETAIL
+Why critical
+EVERY 'Get Started' CTA on homepage and services page points here. Without it, 100% of conversion attempts hit a dead end.
+Nav + CTA links that need to work
+index.html nav 'Contact' + all 'Get Started' buttons on homepage and services.html
+Design style
+Match: same dark background, same nav, same footer as index.html
+Sections to include
+Hero + 3 contact channel cards + Call-back form
+Form fields
+Name, Business Name, WhatsApp/Call*, Email*, Service dropdown, Best time dropdown, Budget dropdown, Optional message
+Form action
+mailto:contact@alphanumerouno.digital OR Formspree — no backend required for now
+Data source
+See Section 3.2 for all Contact page content
+File 3: privacy.html
+REQUIREMENT
+DETAIL
+Why needed
+Legally required under DPDP Act 2023 (India). Currently footer links to WhatsApp instead.
+Design style
+Match: same nav, same footer. Body content can be light background for readability.
+Data source
+See Section 3.3 for full privacy policy text
+File 4: terms.html
+REQUIREMENT
+DETAIL
+Why needed
+Legal protection for the business. Currently footer links to WhatsApp instead.
+Design style
+Match: same nav, same footer. Body content can be light background for readability.
+Data source
+See Section 3.4 for full terms of service text
+2.2 — Create These 2 Support Files
+File 5: sitemap.xml
+Place in root directory. Paste exactly:
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://alphanumerouno.in/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://alphanumerouno.in/services.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://alphanumerouno.in/clients.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://alphanumerouno.in/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://alphanumerouno.in/free-audit.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://alphanumerouno.in/contact.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alphanumerouno.in/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://alphanumerouno.in/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>
+File 6: robots.txt
+Place in root directory. Paste exactly:
+User-agent: *
+Allow: /
+Sitemap: https://alphanumerouno.in/sitemap.xml
+2.3 — Fixes to free-audit.html (Existing File)
+Do NOT rebuild this page. Make targeted edits only. All other content stays exactly as-is.
+WHAT TO CHANGE
+HOW TO CHANGE IT
+Remove fake live counter
+Delete the element showing '47 Bangalore businesses ran their audit today'. Remove any JS that animates this number.
+Remove UPI QR payment section
+Delete the UPI QR code image, the 'I've Paid' button, and the payment instruction text. Replace with a simple lead capture form (name, business, phone, email, goal — same as contact.html).
+Remove non-functional report output
+Delete the section that shows the 13-section AI report with all dashes (---). Replace with: 'We'll prepare your personalised audit and send it within 24 hours.'
+Remove Hostinger affiliate links
+Search for any Hostinger links in the report output section and delete them.
+Fix contradictory claim
+Change '1,200+ Indian businesses have used this audit' to '17+ Bangalore brands have grown with us' — consistent with clients.html.
+Update page headline framing
+Change 'AI Audit — ₹199' references in the page body to 'Free Marketing Audit'. The nav/footer label can stay as-is for now.
+Keep everything else
+Hero design, the 13-section audit checklist display (as a 'what you'll receive' list), testimonials, styling — all unchanged.
+2.4 — Fixes to All Existing Pages (Small Changes)
+CHANGE
+DETAIL
+Footer — GSTIN placeholder
+Replace 'GSTIN: Update in Admin' with real value: 29ABCDE1234F1Z5 (from Netlify reference). Also add CIN: U72900KA2023PTC123456 and UDYAM: UDYAM-KR-03-0123456 in the same line.
+Footer — Privacy Policy link
+Change from: href to WhatsApp. Change to: href='privacy.html'
+Footer — Terms of Service link
+Change from: href to WhatsApp. Change to: href='terms.html'
+Footer — Copyright year on index.html
+Change '© 2024' to '© 2026' on index.html footer to match all other pages.
+Nav — add About Us and Contact to pages that are missing them
+services.html, clients.html, and free-audit.html nav currently lack About and Contact links. Add both to match index.html nav structure.
+Apply all footer fixes to: index.html, services.html, clients.html, free-audit.html
+All 4 existing pages need identical footer updates.
+SECTION 3 — CONTENT FOR MISSING PAGES
+All content below is sourced from numerounomarketing.netlify.app (scraped March 2026). This is the reference version of the brand. Style must match alphanumerouno.in — dark theme, CSS variables from that site.
+3.1 — about.html Content
+Page Meta
+Title: About Numero Uno Marketing | Nishant Sahay | Digital Marketing Agency Bangalore
+Meta description: Meet Nishant Sahay, founder of Numero Uno Marketing — Bangalore's performance-focused digital marketing agency. MBA from BIT Mesra. Ex-ICICI, ex-Vedantu. Fixed fees. Real results.
+Canonical: https://alphanumerouno.in/about.html
+Hero
+Heading: You Deserve an Agency That Gets Results.
+Subtext: Stop working with faceless agencies. Partner with a team of marketers, technologists, and strategists engineered solely for your growth.
+Founder Section
+Name: Nishant Sahay
+Title: Founder & CEO
+Education: MBA Marketing + IT (BIT Mesra)
+Background text: After selling millions in premium banking products at ICICI Bank and scaling tech sales at Vedantu, Nishant saw a gap: you are likely either paying too much to big agencies or getting poor results from freelancers. You deserve better.
+Quote: 'I treat your marketing like my own startup. Weekly 15-min calls. Fixed fees. Real results or you walk.'
+Career Timeline
+ICICI Bank
+Privilege Banking — Sold millions in premium products
+Vedantu
+Tech Sales — Scaled digital education growth
+Numero Uno Marketing
+Founded — Now scaling ambitious brands
+Stats Bar (same style as homepage)
+17+ Brands Scaled
+₹10Cr+ Revenue Generated
+6 USP Cards (grid of 3x2)
+USP CARD
+TITLE
+BODY TEXT
+Founded in Bengaluru
+Work with a team that understands what drives growth for scaling businesses. Available in-person or remotely.
+Fixed Pricing
+Know exactly what you pay. No surprises. No hidden fees. Cancel anytime.
+Weekly Updates
+Get full transparency with 15-min calls and clear performance dashboards.
+Startup DNA
+Partner with founders who have built companies and know how to build yours.
+ROI Focused
+See exactly where every rupee goes. Focus on campaigns that actually convert.
+Scale Ready
+Start small, prove the model, and scale up when you see the results.
+Bottom CTA
+Heading: Ready to Grow Your Business?
+Subtext: Get a free 15-minute strategy call to map out exactly how you can scale. No pressure, no commitment.
+Button: Book Strategy Call → free-audit.html
+3.2 — contact.html Content
+Page Meta
+Title: Contact Numero Uno Marketing | Get a Free Strategy Call | Bangalore
+Meta description: Get in touch with Numero Uno Marketing. Request a free call back within 24 hours. Serving Bangalore SMEs with performance marketing, web development and social media.
+Canonical: https://alphanumerouno.in/contact.html
+Hero
+Heading: Let's Talk Growth
+Subtext: Whether you have a question, need a quote, or want to discuss strategy — we're here to help.
+Contact Channel Cards (3 cards)
+CARD
+LABEL
+VALUE
+Email us at
+contact@alphanumerouno.digital
+Support
+support@numerounomarketing.com
+Call / WhatsApp
+(+91) 96320 91371
+Average response time: Under 24 hours
+Call Back Form
+Form heading: Request a Call Back
+Subtext: Leave your details to receive a call back within 24 hours during business hours.
+Form fields:
+Your Name *
+Business Name *
+WhatsApp / Call Number *
+Email Address *
+Which service are you interested in? * [Dropdown: Website Development (one-time) / Website + Social Media (monthly) / Digital Business Launch (3 months) / Not sure — need your guidance / General Enquiry]
+Best time to call you back? * [Dropdown: Morning (9am – 12pm) / Afternoon (12pm – 3pm) / Evening (3pm – 6pm) / Anytime during business hours]
+Approximate monthly marketing budget? [Dropdown: Under ₹10,000 / ₹10,000 – ₹50,000 / ₹50,000 – ₹2,00,000 / ₹2,00,000+ / Not decided yet]
+Anything specific you want to discuss? (optional) [Textarea]
+CTA button: Request My Call Back →
+Below button note: We call back within 24 hours · Mon–Sat, 9am–6pm
+3.3 — privacy.html Content
+Page Meta
+Title: Privacy Policy | Numero Uno Marketing Pvt. Ltd.
+Canonical: https://alphanumerouno.in/privacy.html
+Full Privacy Policy Text
+Effective Date: March 2026
+Numero Uno Marketing Pvt. Ltd. ('we,' 'us,' or 'our') operates the website alphanumerouno.in. This page informs you of our policies regarding the collection, use, and disclosure of personal information.
+Information We Collect
+When you fill out a form on our website, we may collect your name, business name, phone number, email address, and marketing goals. This information is used solely to respond to your inquiry and provide our services.
+How We Use Your Information
+To respond to your inquiry or service request
+To provide marketing audit and consulting services
+To send relevant marketing communications (with your consent)
+To improve our website and services
+Cookies & Tracking
+We use Google Analytics and similar tools to understand how visitors use our website. These tools use cookies to collect information such as browser type, pages visited, and time on site. You can disable cookies in your browser settings.
+Data Sharing
+We do not sell, trade, or otherwise transfer your personal information to outside parties. We may share information with trusted third-party service providers who assist us in operating our website and providing services, subject to confidentiality agreements.
+Data Security
+We implement appropriate security measures to protect your personal information. However, no method of transmission over the Internet is 100% secure.
+Your Rights (DPDP Act 2023)
+Under the Digital Personal Data Protection Act 2023, you have the right to access, correct, or delete your personal data at any time. You may also withdraw consent for marketing communications. To exercise any of these rights, contact us at contact@alphanumerouno.digital.
+Contact
+Numero Uno Marketing Pvt. Ltd., No.63, Katha No.6, Agara, Thataguni, Bangalore 560082. Email: contact@alphanumerouno.digital
+3.4 — terms.html Content
+Page Meta
+Title: Terms of Service | Numero Uno Marketing Pvt. Ltd.
+Canonical: https://alphanumerouno.in/terms.html
+Full Terms of Service Text
+Effective Date: March 2026
+These Terms of Service govern your use of the website operated by Numero Uno Marketing Pvt. Ltd. By accessing or using our website, you agree to these terms.
+Services
+Numero Uno Marketing provides digital marketing services including performance marketing, social media management, web development, AI growth tools, and custom software. Specific deliverables, timelines, and pricing are agreed upon in individual service contracts.
+Payments
+Service fees are as quoted on our website or in individual proposals. Payment terms are outlined in individual service agreements. All prices are in Indian Rupees (INR) and are subject to applicable GST at 18%.
+Cancellation
+Monthly services can be cancelled at any time with 15 days' written notice. There are no long-term contracts or lock-in periods unless explicitly agreed upon. One-time project fees are non-refundable once work has commenced.
+Intellectual Property
+All content created for you as part of our services (websites, designs, copy) becomes your property upon full payment. Our proprietary tools, processes, and internal methodologies remain our intellectual property.
+Limitation of Liability
+While we strive for the best results, we do not guarantee specific marketing outcomes (leads, revenue, ROAS). Marketing results depend on many factors including market conditions, competition, and client cooperation. Our liability is limited to the fees paid for the specific service in question.
+Governing Law
+These terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Bangalore, Karnataka.
+Contact
+Numero Uno Marketing Pvt. Ltd. Email: contact@alphanumerouno.digital
+SECTION 4 — ANTIGRAVITY AI BUILDER PROMPT
+INSTRUCTIONS: Copy everything between the START and END markers. Attach the zip file (files__6_.zip containing final-index.html, final-services.html, final-clients.html, final-audit.html) when pasting into Antigravity.
+========================================================================
+PROMPT START — COPY FROM HERE
+========================================================================
+I am working on the website alphanumerouno.in for Numero Uno Marketing, a digital marketing agency in Bangalore, India. I am attaching 4 existing HTML files from the live site (final-index.html, final-services.html, final-clients.html, final-audit.html).
+THE TASK:
+The existing HTML files are correct in their content and design — DO NOT change or rewrite them. Your job is to:
+Build 4 missing pages (about.html, contact.html, privacy.html, terms.html) that exactly match the design style of the existing pages
+Create sitemap.xml and robots.txt
+Make small targeted edits to the 4 existing pages (fix footer links, fix nav, fix footer GSTIN, fix copyright year, fix free-audit.html specific issues)
+All content, data, and copy for every task is specified below. Do not invent or change anything.
+DESIGN SYSTEM (from existing pages — apply to all new pages)
+Background color: #060E10 (--blk)
+Primary text: #EEF8F6 (--wht)
+Secondary text: #D4EDEA (--tx) / #7AACA6 (--tx2)
+Accent: #2DD4C8 (--lime)
+Card background: #0C2224 (--g1) / #132E30 (--g2)
+Border: rgba(45,212,200,.12) (--bd)
+Fonts: Plus Jakarta Sans (headings), Nunito (body) — loaded from Google Fonts
+Nav: sticky, 64px, backdrop blur, same links on every page
+Footer: 4-column grid, same on every page
+WhatsApp float button: fixed bottom-right on every page
+Fully responsive: hamburger menu at mobile, single-column stacks
+NAV STRUCTURE (apply to ALL pages — new and existing)
+Every page must have these nav links in this order:
+Logo: 'Numero Uno' with 'Uno' in --lime — links to index.html
+Home → index.html
+Services & Pricing → services.html
+Client Results → clients.html
+About Us → about.html
+AI Audit → free-audit.html
+WhatsApp button → wa.me/919632091371
+CTA button: 'Get Started' → contact.html (NOT free-audit.html)
+The existing pages (index.html, services.html, clients.html) do not have 'About Us' or 'Contact' in their nav. Add both to those pages.
+FOOTER STRUCTURE (apply to ALL pages — new and existing)
+Standard footer with 4 columns:
+Column 1: Logo + tagline + address + phone + email + social icons
+Column 2: Services links (same as current)
+Column 3: Industries links (same as current)
+Column 4: Locations links (same as current)
+Footer bottom bar changes (apply to ALL existing + new pages):
+Copyright: © 2026 Numero Uno Marketing Pvt. Ltd. · GSTIN: 29ABCDE1234F1Z5 · CIN: U72900KA2023PTC123456 · UDYAM: UDYAM-KR-03-0123456
+Privacy Policy link: href='privacy.html' (NOT WhatsApp)
+Terms of Service link: href='terms.html' (NOT WhatsApp)
+Sitemap link: href='/sitemap.xml' (keep as-is)
+TASK 1: BUILD about.html
+Design: match index.html (dark theme, same nav, same footer, same scroll reveal animations)
+Sections in order:
+Page <head>: title='About Numero Uno Marketing | Nishant Sahay | Digital Marketing Agency Bangalore', meta description, canonical https://alphanumerouno.in/about.html, same Google Fonts link, same CSS variables
+Nav: standard nav as above
+Hero: section-pre label 'About Us', H2 'You Deserve an Agency That Gets Results.', sub 'Stop working with faceless agencies. Partner with a team of marketers, technologists, and strategists engineered solely for your growth.'
+Founder section (2-col): Left — photo placeholder (200x200 circle, border --bd), Right — Name: Nishant Sahay, Title: Founder & CEO, Education: MBA Marketing + IT (BIT Mesra). Career timeline: ICICI Bank (Privilege Banking) → Vedantu (Tech Sales) → Numero Uno Marketing (Founded). Quote block (border-left --lime): 'I treat your marketing like my own startup. Weekly 15-min calls. Fixed fees. Real results or you walk.'
+Stats row: 17+ Brands Scaled | ₹10Cr+ Revenue Generated — same bento style as homepage
+6 USP cards (3x2 grid, bento style): Founded in Bengaluru / Fixed Pricing / Weekly Updates / Startup DNA / ROI Focused / Scale Ready — each with short description (see Section 3.1 of this doc)
+CTA section: H2 'Ready to Grow Your Business?', sub 'Get a free 15-minute strategy call to map out exactly how you can scale. No pressure, no commitment.', btn-lime: 'Book Strategy Call' → free-audit.html
+Footer: standard footer as above
+WhatsApp float button
+TASK 2: BUILD contact.html
+Design: match index.html. This is the most critical missing page — ALL 'Get Started' CTAs point here.
+Sections in order:
+Page <head>: title='Contact Numero Uno Marketing | Get a Free Strategy Call | Bangalore', meta description, canonical
+Nav: standard nav as above
+Hero: section-pre 'Contact Us', H2 'Let's Talk Growth', sub 'Whether you have a question, need a quote, or want to discuss strategy — we're here to help.'
+3 contact channel cards (horizontal row): Email: contact@alphanumerouno.digital | Support: support@numerounomarketing.com | Call/WhatsApp: (+91) 96320 91371. Below cards: 'Average response time: Under 24 hours'
+Call-back form (card style, border-top --lime): Title 'Request a Call Back', subtext 'Leave your details to receive a call back within 24 hours during business hours.' Form fields: Name*, Business Name*, WhatsApp/Call*, Email*, Service dropdown*, Time dropdown*, Budget dropdown, Message textarea. Button: 'Request My Call Back →' (btn-lime style). Note below: 'We call back within 24 hours · Mon–Sat, 9am–6pm'. Form action: mailto:contact@alphanumerouno.digital
+Footer: standard footer as above
+WhatsApp float button
+Dropdown options: Service — Website Development (one-time) / Website + Social Media (monthly) / Digital Business Launch (3 months) / Not sure / General Enquiry. Time — Morning 9am-12pm / Afternoon 12pm-3pm / Evening 3pm-6pm / Anytime. Budget — Under ₹10,000 / ₹10,000-₹50,000 / ₹50,000-₹2,00,000 / ₹2,00,000+ / Not decided.
+TASK 3: BUILD privacy.html
+Page <head>: title='Privacy Policy | Numero Uno Marketing Pvt. Ltd.', canonical
+Nav: standard nav
+Content: H1 'Privacy Policy', Effective Date March 2026, then full privacy policy text (see Section 3.3 of this doc — paste it verbatim)
+Style: article/prose layout, slightly lighter card background for readability, same dark page background
+Footer: standard footer
+TASK 4: BUILD terms.html
+Page <head>: title='Terms of Service | Numero Uno Marketing Pvt. Ltd.', canonical
+Nav: standard nav
+Content: H1 'Terms of Service', Effective Date March 2026, then full terms text (see Section 3.4 of this doc — paste it verbatim)
+Style: same as privacy.html
+Footer: standard footer
+TASK 5: CREATE sitemap.xml
+Create file sitemap.xml in the root with all 8 pages (see Section 2.2 for exact XML content).
+TASK 6: CREATE robots.txt
+Create file robots.txt in root with Allow: / and Sitemap link (see Section 2.2 for exact content).
+TASK 7: EDIT free-audit.html (targeted fixes only)
+Do NOT redesign this page. Make only these specific changes:
+REMOVE the element/block that shows '47 Bangalore businesses ran their audit today' (fake live counter). Also remove any JavaScript that animates or updates this number.
+REMOVE the UPI QR code section — the QR image, payment instructions, and 'I've Paid' button. Replace that entire block with a simple lead form: Name, Business Name, Phone*, Email*, Primary Goal dropdown, CTA button 'Send My Audit Request →'. Below: 'We'll prepare your personalised audit within 24 hours'. Form action: mailto:contact@alphanumerouno.digital
+REMOVE the AI report output section showing dashes (---) in all fields. Replace with a single card: 'Your personalised audit report will be sent to your email within 24 hours of your request. Our team will also call you for a 15-minute walkthrough.'
+REMOVE any Hostinger affiliate links from the page.
+CHANGE '1,200+ Indian businesses have used this audit' to '17+ Bangalore brands have grown with us'
+Apply standard nav and footer updates (same as all other pages)
+TASK 8: EDIT index.html, services.html, clients.html (footer + nav fixes only)
+On these 3 pages — do NOT change any content, layout, or design. Only:
+Add 'About Us → about.html' and update nav CTA to 'Get Started → contact.html' (if not already present)
+Update footer: Privacy Policy → privacy.html, Terms of Service → terms.html
+Update footer GSTIN line to: © 2026 Numero Uno Marketing Pvt. Ltd. · GSTIN: 29ABCDE1234F1Z5 · CIN: U72900KA2023PTC123456 · UDYAM: UDYAM-KR-03-0123456
+On index.html only: change copyright year from 2024 to 2026
+OUTPUT ALL FILES. Deliver every HTML, XML, and TXT file as a complete file.
+========================================================================
+PROMPT END
+========================================================================
+SECTION 5 — POST-LAUNCH CHECKLIST
+Complete these after Antigravity delivers the files and you upload them to Hostinger.
+Day 1 — Verify Everything Works
+Open every page — index, services, clients, about, contact, free-audit, privacy, terms
+Click every nav link on every page — confirm no 404s
+Click every 'Get Started' CTA — confirm it opens contact.html
+Click Privacy Policy and Terms of Service in footer — confirm they open the correct pages
+Test contact form — submit a test entry, confirm the mailto fires
+Test free-audit form — submit a test entry
+Confirm robots.txt is live: https://alphanumerouno.in/robots.txt
+Confirm sitemap.xml is live: https://alphanumerouno.in/sitemap.xml
+Test on mobile (iPhone view in Chrome DevTools) — all pages
+Day 2–3 — Google Search Console
+Go to search.google.com/search-console
+Verify ownership of alphanumerouno.in (DNS TXT record or HTML file method)
+Submit sitemap: GSC → Sitemaps → https://alphanumerouno.in/sitemap.xml
+URL Inspection on homepage → Request Indexing
+URL Inspection on all 7 other pages → Request Indexing on each
+Check page source of index.html — search for 'noindex'. If found anywhere, remove it.
+Week 1 — SEO Validation
+Run Google Rich Results Test on homepage: search.google.com/test/rich-results — should find LocalBusiness schema
+Run PageSpeed Insights: pagespeed.web.dev — target 80+ on mobile
+Run site:alphanumerouno.in in Google — after 3–7 days, pages should begin appearing
+Week 2 — Off-Page (Start Building Authority)
+Create / claim Google Business Profile: business.google.com — add website, phone, address, category 'Digital Marketing Agency'
+Submit to Justdial (justdial.com/advertise)
+Submit to Sulekha (sulekha.com)
+Submit to Clutch.co (clutch.co/agencies) — high DA backlink
+Verify LinkedIn company page has correct link to alphanumerouno.in
+Month 2 — Content & Growth
+Add GST number to footer if placeholder — confirm GSTIN: 29ABCDE1234F1Z5 is the real number
+Publish first blog post targeting 'digital marketing agency Bangalore'
+Set up Ahrefs Webmaster Tools (free): ahrefs.com/webmaster-tools — track backlinks
+Request Google reviews from existing clients — ask them to review the Google Business Profile
+Check GSC — identify which keywords are generating impressions and build content around them
+— END OF DOCUMENT —
+alphanumerouno.in Website Rebuild · March 2026 · Numero Uno Marketing Pvt. Ltd.
