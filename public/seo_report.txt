@@ -202,9 +202,11 @@ Heading: You Deserve an Agency That Gets Results.
 Subtext: Stop working with faceless agencies. Partner with a team of marketers, technologists, and strategists engineered solely for your growth.
 Founder Section
 Name: Nishant Sahay
-Title: Founder & CEO
+Title: Director & CEO
 Education: MBA Marketing + IT (BIT Mesra)
-Background text: After selling millions in premium banking products at ICICI Bank and scaling tech sales at Vedantu, Nishant saw a gap: you are likely either paying too much to big agencies or getting poor results from freelancers. You deserve better.
+Background text: Nishant Sahay founded Numero Uno in 2025 with one focus: give Bangalore's local businesses the same quality of marketing that only large brands could previously afford.
+With 9 years of sales and growth experience — including managing client relationships at ICICI Bank and driving 3x ROAS on marketing campaigns — Nishant brings a commercially rigorous approach to every client. He treats your marketing budget like his own.
+Weekly calls. Fixed fees. Results in writing. No junior account managers.
 Quote: 'I treat your marketing like my own startup. Weekly 15-min calls. Fixed fees. Real results or you walk.'
 Career Timeline
 ICICI Bank
@@ -366,7 +368,7 @@ Sections in order:
 Page <head>: title='About Numero Uno Marketing | Nishant Sahay | Digital Marketing Agency Bangalore', meta description, canonical https://alphanumerouno.in/about.html, same Google Fonts link, same CSS variables
 Nav: standard nav as above
 Hero: section-pre label 'About Us', H2 'You Deserve an Agency That Gets Results.', sub 'Stop working with faceless agencies. Partner with a team of marketers, technologists, and strategists engineered solely for your growth.'
-Founder section (2-col): Left — photo placeholder (200x200 circle, border --bd), Right — Name: Nishant Sahay, Title: Founder & CEO, Education: MBA Marketing + IT (BIT Mesra). Career timeline: ICICI Bank (Privilege Banking) → Vedantu (Tech Sales) → Numero Uno Marketing (Founded). Quote block (border-left --lime): 'I treat your marketing like my own startup. Weekly 15-min calls. Fixed fees. Real results or you walk.'
+Founder section (2-col): Left — photo placeholder (200x200 circle, border --bd), Right — Name: Nishant Sahay, Title: Director & CEO, Education: MBA Marketing + IT · BIT Mesra · 9 years sales & growth experience. Career timeline: ICICI Bank — Client relationships & financial sales → Sales & Growth roles — EdTech and enterprise, 2017–2024 → Numero Uno Marketing — Founded 2025. Quote block (border-left --lime): 'I treat your marketing like my own startup. Weekly 15-min calls. Fixed fees. Real results or you walk.'
 Stats row: 17+ Brands Scaled | ₹10Cr+ Revenue Generated — same bento style as homepage
 6 USP cards (3x2 grid, bento style): Founded in Bengaluru / Fixed Pricing / Weekly Updates / Startup DNA / ROI Focused / Scale Ready — each with short description (see Section 3.1 of this doc)
 CTA section: H2 'Ready to Grow Your Business?', sub 'Get a free 15-minute strategy call to map out exactly how you can scale. No pressure, no commitment.', btn-lime: 'Book Strategy Call' → free-audit.html
