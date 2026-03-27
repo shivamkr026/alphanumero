@@ -155,7 +155,8 @@ body{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <div class="form-card rv">
       <h3>Request a Call Back</h3>
       <div class="form-sub">Leave your details to receive a call back within 48 hours during business hours.</div>
-      <form class="fg" data-netlify="true" name="contact" method="POST">
+      <form class="fg" data-netlify="true" name="contact-callback" id="contact-callback" method="POST">
+        <input type='hidden' name='form-name' value='contact-callback'>
         <div class="fl2">
           <input class="fi" type="text" name="name" placeholder="Your Name *" required>
           <input class="fi" type="text" name="business" placeholder="Business Name *" required>
@@ -192,7 +193,28 @@ body{-webkit-text-size-adjust:100%;text-size-adjust:100%}
         </div>
         <textarea class="fi" name="message" placeholder="Tell us about your project or question (optional)" rows="3"></textarea>
         <button type="submit" class="btn-submit">Request My Call Back →</button>
+        <div class='form-success' style='display:none; padding: 16px 20px; background: #d5f5e3; color: #1e8449; border-radius: 8px; margin-top: 16px; font-size: 15px;'>
+          ✅ Received! We'll call you back within 2 hours (Mon–Sat, 9AM–7PM).
+        </div>
       </form>
+      <script>
+        document.getElementById('contact-callback').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const form = e.target;
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(new FormData(form)).toString()
+          })
+          .then(() => {
+            Array.from(form.children).forEach(child => {
+              if (child.className !== 'form-success') child.style.display = 'none';
+            });
+            form.querySelector('.form-success').style.display = 'block';
+          })
+          .catch((error) => alert('Something went wrong. Please WhatsApp us directly at +91 96320 91371'));
+        });
+      </script>
       <div class="form-note">We call back within 24 hours · Mon–Sat, 9am–6pm</div>
     </div>
   </div>

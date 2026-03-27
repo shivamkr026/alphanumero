@@ -341,20 +341,42 @@ body{-webkit-text-size-adjust:100%;text-size-adjust:100%}
         </div>
       </div>
       <div class="rv d2">
-        <div class="cta-box">
+        <form class="cta-box" data-netlify="true" name="clients-whatsapp-enquiry" id="clients-whatsapp-enquiry" method="POST">
+          <input type='hidden' name='form-name' value='clients-whatsapp-enquiry'>
           <h3>Want results like these?</h3>
           <p>Tell us about your business. We'll call you within 2 hours with an honest assessment of what will work — no pitch, no pressure.</p>
-          <input class="fi" type="text" id="cn" placeholder="Your name *">
-          <input class="fi" type="tel" id="cp" placeholder="WhatsApp number *">
-          <select class="fs-sel" id="ct"><option value="">Business type</option><option>Dental Clinic</option><option>Gym / Fitness Studio</option><option>Café / Restaurant</option><option>School / Coaching</option><option>Salon / Beauty</option><option>Other SME / MSME</option></select>
+          <input class="fi" type="text" id="cn" name="name" placeholder="Your name *" required>
+          <input class="fi" type="tel" id="cp" name="phone" placeholder="WhatsApp number *" required>
+          <select class="fs-sel" id="ct" name="type"><option value="">Business type</option><option>Dental Clinic</option><option>Gym / Fitness Studio</option><option>Café / Restaurant</option><option>School / Coaching</option><option>Salon / Beauty</option><option>Other SME / MSME</option></select>
           <div style="margin-bottom:8px"></div>
-          <button class="cf-btn" onclick="sendLead()">💬 Send on WhatsApp — Let's Talk</button>
+          <button type="submit" class="cf-btn">💬 Send on WhatsApp — Let's Talk</button>
+          <div class='form-success' style='display:none; padding: 16px 20px; background: #d5f5e3; color: #1e8449; border-radius: 8px; margin-top: 16px; font-size: 15px;'>
+            ✅ Received! We'll call you back within 2 hours (Mon–Sat, 9AM–7PM).
+          </div>
           <p style="font-size:11px;color:var(--mt);text-align:center;margin-top:8px">Goes directly to our founder's WhatsApp · No middlemen</p>
           <div style="display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap">
             <a href="free-audit.html" class="btn-p" style="font-size:12px;padding:9px 16px">✦ Run AI Audit — ₹199</a>
             <a href="services.html" class="btn-o" style="font-size:12px;padding:9px 16px">View All Packages →</a>
           </div>
-        </div>
+        </form>
+        <script>
+          document.getElementById('clients-whatsapp-enquiry').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            fetch('/', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: new URLSearchParams(new FormData(form)).toString()
+            })
+            .then(() => {
+              Array.from(form.children).forEach(child => {
+                if (child.className !== 'form-success') child.style.display = 'none';
+              });
+              form.querySelector('.form-success').style.display = 'block';
+            })
+            .catch((error) => alert('Something went wrong. Please WhatsApp us directly at +91 96320 91371'));
+          });
+        </script>
       </div>
     </div>
   </div>
