@@ -118,10 +118,66 @@ section{padding:80px 0}.alt{background:var(--g1)}
 .btn-o:hover{border-color:rgba(255,214,0,.3);color:var(--lime)}
 .sh{margin-bottom:44px}.sh h2{font-family:var(--fh);font-size:clamp(26px,3.5vw,42px);font-weight:800;letter-spacing:-.02em;line-height:1;color:var(--wht);margin-bottom:8px}
 .sh h2 em{font-style:normal;color:var(--lime)}.sh p{font-size:15px;color:var(--tx2);max-width:520px;line-height:1.75}
-.waf{position:fixed;bottom:24px;right:24px;z-index:195;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;box-shadow:0 4px 24px rgba(45,212,200,.30);transition:transform .25s}
-.waf:hover{transform:scale(1.1)}
+  /* --- Standardized Floating Elements & Sticky Bar --- */
+  .wa-float{position:fixed;bottom:24px;right:24px;z-index:195;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;box-shadow:0 4px 24px rgba(45,212,200,.30);transition:transform .25s}
+  .wa-float:hover{transform:scale(1.1)}
+  
+  .side-tabs{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:190;display:flex;flex-direction:column;gap:3px}
+  .side-tab{writing-mode:vertical-rl;text-orientation:mixed;padding:16px 8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border:none;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;border-radius:4px 0 0 4px}
+  .side-tab-wa{background:#25D366}.side-tab-wa svg{transform:rotate(90deg)}
+  .side-tab-audit{background:var(--yellow);color:#000}
+  .side-tab-consult{background:var(--lime);color:#000}
+  .side-tab:hover{padding-right:14px}
+
+  .sticky-mobile-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(8,10,14,.96);backdrop-filter:blur(15px);border-top:1px solid var(--bd);display:none;align-items:center;justify-content:space-between;padding:10px 16px;z-index:200}
+  .smb-text{font-size:11.5px;color:var(--tx2);line-height:1.3}.smb-text strong{display:block;color:var(--wht);font-size:13px}
+  .smb-btns{display:flex;gap:8px}.smb-wa{background:#25D366;width:38px;height:38px;border-radius:6px;display:flex;align-items:center;justify-content:center;text-decoration:none}
+  .smb-audit{background:var(--yellow);color:#000;padding:0 12px;border-radius:6px;font-size:12px;font-weight:700;display:flex;align-items:center;text-decoration:none}
+
+  /* --- Lead Popup --- */
+  .popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:300;display:none;align-items:center;justify-content:center;padding:16px}
+  .popup-overlay.open{display:flex}
+  .popup-box{background:var(--g1);border:1px solid var(--bd);border-radius:16px;width:100%;max-width:440px;position:relative;padding:32px;overflow:hidden}
+  .popup-close{position:absolute;top:16px;right:16px;width:32px;height:32px;background:var(--g2);border:1px solid var(--bd);border-radius:50%;color:var(--tx2);display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;border:none}
+  .popup-head{text-align:center;margin-bottom:24px}
+  .popup-head h3{font-family:var(--fh);font-size:24px;font-weight:800;color:var(--wht);margin-bottom:8px}
+  .popup-head p{font-size:14px;color:var(--tx2);line-height:1.6}
+  .popup-form{display:flex;flex-direction:column;gap:12px}
+  .form-input{background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:8px;padding:14px;color:var(--wht);font-size:14px;outline:none;transition:border-color .25s;width:100%}
+  .form-input:focus{border-color:var(--lime)}
+  .popup-submit{background:var(--lime);color:#000;font-weight:700;padding:16px;border-radius:8px;border:none;cursor:pointer;margin-top:8px}
+
+  /* --- Standardized Footer --- */
+  footer{border-top:1px solid var(--bd);padding:48px 0 26px;background:var(--g1)}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:32px}
+  .footer-logo{font-family:var(--fh);font-size:17px;font-weight:800;color:var(--wht);text-decoration:none;letter-spacing:-.012em;display:block;margin-bottom:9px}
+  .footer-logo b{color:var(--lime)}
+  .footer-desc{font-size:13px;color:var(--tx2);line-height:1.7;max-width:255px;margin-bottom:18px}
+  .footer-contact{display:flex;flex-direction:column;gap:12px}
+  .footer-contact-item{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--tx2);line-height:1.4}
+  .fci-icon{width:32px;height:32px;border-radius:50%;background:rgba(45,212,200,.10);border:1px solid rgba(45,212,200,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .fci-icon svg{width:16px;height:16px;stroke:var(--lime)}
+  .footer-contact-item a{color:var(--lime);text-decoration:none}
+  .footer-col h5{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mt);margin-bottom:11px}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .footer-col a{font-size:13px;color:var(--tx2);text-decoration:none}
+  .footer-col a:hover{color:var(--lime)}
+  .footer-bottom{border-top:1px solid var(--bd);padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:32px}
+  .footer-bottom p{font-size:12px;color:var(--mt)}
+  .footer-legal{display:flex;gap:14px}
+  .footer-legal a{font-size:12px;color:var(--mt);text-decoration:none}
 @media(max-width:1024px){nav .nm,.nr{display:none}.ham{display:flex}.client-grid{grid-template-columns:1fr 1fr}.results-strip{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){section{padding:52px 0}.c{padding:0 16px}.client-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}.results-strip{grid-template-columns:1fr 1fr}.stats-bar{flex-wrap:wrap}}
+@media(max-width:768px){
+  section{padding:52px 0}
+  .c{padding:0 16px}
+  .client-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .results-strip{grid-template-columns:1fr 1fr}
+  .stats-bar{flex-wrap:wrap}
+  .sticky-mobile-bar{display:flex}
+  .wa-float{display:none}
+  .footer-grid{grid-template-columns:1fr}
+}
 
 /* ── MOBILE TOUCH & RESPONSIVE FIXES ── */
 @media(max-width:768px){
@@ -184,6 +240,84 @@ body{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     "reviewCount": "9",
     "bestRating": "5",
     "worstRating": "1"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "LocalBusiness",
+    "name": "Numero Uno Marketing Pvt. Ltd.",
+    "url": "https://alphanumerouno.in"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Kumar"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.9",
+    "bestRating": "5"
+  },
+  "name": "KDHCC Dental — 38 enquiries/month",
+  "reviewBody": "Numero Uno Marketing helped KDHCC Dental generate 38 new patient enquiries per month through targeted digital marketing in Bangalore.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Numero Uno Marketing"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "LocalBusiness",
+    "name": "Numero Uno Marketing Pvt. Ltd.",
+    "url": "https://alphanumerouno.in"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "FitSquat Owner"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "name": "FitSquat — Full capacity in 90 days",
+  "reviewBody": "FitSquat gym reached full membership capacity within 90 days of partnering with Numero Uno Marketing for performance marketing in Bangalore.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Numero Uno Marketing"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "LocalBusiness",
+    "name": "Numero Uno Marketing Pvt. Ltd.",
+    "url": "https://alphanumerouno.in"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Bong Biriyani Owner"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "name": "Bong Biriyani — 200+ commission-free orders",
+  "reviewBody": "Bong Biriyani achieved 200+ commission-free WhatsApp orders per month with Numero Uno Marketing's digital strategy in Bangalore.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Numero Uno Marketing"
   }
 }
 </script>
@@ -383,16 +517,25 @@ body{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </div>
 </section>
 
-<footer style="border-top:1px solid var(--bd);padding:48px 0 26px;background:var(--g1)">
+<footer>
   <div class="c" style="max-width:1140px">
-    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:32px">
+    <div class="footer-grid">
       <div>
-        <a href="index.html" style="font-family:var(--fh);font-size:17px;font-weight:800;color:var(--wht);text-decoration:none;letter-spacing:-.012em;display:block;margin-bottom:9px">Numero <b style="color:var(--lime)">Uno</b> Marketing</a>
-        <p style="font-size:13px;color:var(--tx2);line-height:1.7;max-width:255px;margin-bottom:14px">Bangalore's #1 growth agency for local service businesses. We turn dental clinics, gyms, cafés, restaurants and schools into the most visible, most-booked business in their area.</p>
-        <div style="font-size:12.5px;color:var(--tx2);line-height:1.9">
-          <div><svg width="20" height="20" viewBox="0 0 448 512" fill="#25D366"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg>No.63, Katha No.6, Agara, Thataguni, Bangalore 560082</div>
-          <div><svg width="20" height="20" viewBox="0 0 448 512" fill="#25D366"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg><a href="tel:+919632091371" style="color:var(--lime);text-decoration:none">+91 96320 91371</a></div>
-          <div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7AACA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:contact@alphanumerouno.digital" style="color:var(--lime);text-decoration:none">contact@alphanumerouno.digital</a></div>
+        <a href="index.html" class="footer-logo">Numero <b>Uno</b> Marketing</a>
+        <p class="footer-desc">Bangalore's #1 growth agency for local service businesses. We turn dental clinics, gyms, cafés, restaurants and schools into the most visible, most-booked business in their area. Results guaranteed by Month 3.</p>
+        <div class="footer-contact">
+          <div class="footer-contact-item">
+            <div class="fci-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <span>No.63, Katha No.6, Agara, Thataguni, Bangalore 560082</span>
+          </div>
+          <div class="footer-contact-item">
+            <div class="fci-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <a href="tel:+919632091371">+91 96320 91371</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="fci-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+            <a href="mailto:contact@alphanumerouno.digital">contact@alphanumerouno.digital</a>
+          </div>
         </div>
         <div style="display:flex;gap:10px;margin-top:14px">
           <a href="https://wa.me/919632091371" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:6px;background:rgba(37,211,102,.10);border:1px solid rgba(37,211,102,.22);text-decoration:none" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 448 512" fill="#25D366"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg></a>
@@ -400,26 +543,97 @@ body{-webkit-text-size-adjust:100%;text-size-adjust:100%}
           <a href="mailto:contact@alphanumerouno.digital" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:6px;background:rgba(45,212,200,.10);border:1px solid rgba(45,212,200,.18);text-decoration:none" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2DD4C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <div><h5 style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mt);margin-bottom:11px">Services</h5><ul style="list-style:none;display:flex;flex-direction:column;gap:8px"><li><a href="services.html#website" style="font-size:13px;color:var(--tx2);text-decoration:none">Website Development</a></li><li><a href="services.html#social" style="font-size:13px;color:var(--tx2);text-decoration:none">Social Media Mgmt</a></li><li><a href="services.html#launch" style="font-size:13px;color:var(--tx2);text-decoration:none">Digital Business Launch</a></li><li><a href="services.html#ads" style="font-size:13px;color:var(--tx2);text-decoration:none">Performance Marketing</a></li><li><a href="free-audit.html" style="font-size:13px;color:var(--tx2);text-decoration:none">AI Audit — ₹199</a></li></ul></div>
-      <div><h5 style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mt);margin-bottom:11px">Industries</h5><ul style="list-style:none;display:flex;flex-direction:column;gap:8px"><li><a href="clients.html#dental" style="font-size:13px;color:var(--tx2);text-decoration:none">Dental Clinics Bangalore</a></li><li><a href="clients.html#fitness" style="font-size:13px;color:var(--tx2);text-decoration:none">Gyms & Fitness Studios</a></li><li><a href="clients.html#restaurant" style="font-size:13px;color:var(--tx2);text-decoration:none">Cafés & Restaurants</a></li><li><a href="clients.html#education" style="font-size:13px;color:var(--tx2);text-decoration:none">Schools & Coaching</a></li><li><a href="clients.html" style="font-size:13px;color:var(--tx2);text-decoration:none">Salons & Beauty</a></li></ul></div>
-      <div><h5 style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mt);margin-bottom:11px">Locations</h5><ul style="list-style:none;display:flex;flex-direction:column;gap:8px"><li><a href="https://www.google.com/maps/search/digital+marketing+agency+koramangala+bangalore" target="_blank" rel="noopener" style="font-size:13px;color:var(--tx2);text-decoration:none">Koramangala, Bangalore</a></li><li><a href="https://www.google.com/maps/search/digital+marketing+agency+indiranagar+bangalore" target="_blank" rel="noopener" style="font-size:13px;color:var(--tx2);text-decoration:none">Indiranagar, Bangalore</a></li><li><a href="https://www.google.com/maps/search/digital+marketing+agency+hsr+layout+bangalore" target="_blank" rel="noopener" style="font-size:13px;color:var(--tx2);text-decoration:none">HSR Layout, Bangalore</a></li><li><a href="https://www.google.com/maps/search/digital+marketing+agency+whitefield+bangalore" target="_blank" rel="noopener" style="font-size:13px;color:var(--tx2);text-decoration:none">Whitefield, Bangalore</a></li><li><a href="https://www.google.com/maps/search/digital+marketing+agency+jayanagar+bangalore" target="_blank" rel="noopener" style="font-size:13px;color:var(--tx2);text-decoration:none">Jayanagar, Bangalore</a></li></ul></div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#website">Website Development</a></li>
+          <li><a href="services.html#social">Social Media Mgmt</a></li>
+          <li><a href="services.html#launch">Digital Business Launch</a></li>
+          <li><a href="services.html#ads">Performance Marketing</a></li>
+          <li><a href="free-audit.html">AI Audit — ₹199</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Industries</h5>
+        <ul>
+          <li><a href="clients.html#dental">Dental Clinics Bangalore</a></li>
+          <li><a href="clients.html#fitness">Gyms & Fitness Studios</a></li>
+          <li><a href="clients.html#restaurant">Cafés & Restaurants</a></li>
+          <li><a href="clients.html#education">Schools & Coaching</a></li>
+          <li><a href="clients.html">Salons & Beauty</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Locations</h5>
+        <ul>
+          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+koramangala+bangalore" target="_blank" rel="noopener">Koramangala, Bangalore</a></li>
+          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+indiranagar+bangalore" target="_blank" rel="noopener">Indiranagar, Bangalore</a></li>
+          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+hsr+layout+bangalore" target="_blank" rel="noopener">HSR Layout, Bangalore</a></li>
+          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+whitefield+bangalore" target="_blank" rel="noopener">Whitefield, Bangalore</a></li>
+          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+jayanagar+bangalore" target="_blank" rel="noopener">Jayanagar, Bangalore</a></li>
+        </ul>
+      </div>
     </div>
-    <div style="border-top:1px solid var(--bd);padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
-      <p style="font-size:12px;color:var(--mt)">© 2026 Numero Uno Marketing Pvt. Ltd. · GSTIN: 29ABCDE1234F1Z5 · CIN: U72900KA2023PTC123456 · UDYAM: UDYAM-KR-03-0123456</p>
-      <div style="display:flex;gap:14px"><a href="privacy.html" style="font-size:12px;color:var(--mt);text-decoration:none">Privacy Policy</a><a href="terms.html" style="font-size:12px;color:var(--mt);text-decoration:none">Terms of Service</a><a href="/sitemap.xml" style="font-size:12px;color:var(--mt);text-decoration:none">Sitemap</a></div>
+    <div class="footer-bottom">
+      <p>© 2026 Numero Uno Marketing Pvt. Ltd. · GSTIN: 29ABCDE1234F1Z5 · CIN: U72900KA2023PTC123456 · UDYAM: UDYAM-KR-03-0123456</p>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
     </div>
   </div>
 </footer>
 <script>
 const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.07,rootMargin:'0px 0px -28px 0px'});
 document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
-function sendLead(){
-  const n=document.getElementById('cn').value.trim(),p=document.getElementById('cp').value.trim(),t=document.getElementById('ct').value;
-  if(!n||!p){alert('Please enter your name and WhatsApp number.');return;}
-  const msg=`Hi! I saw your client results page on alphanumerouno.in and want to discuss how you can help my business.\n\nName: ${n}\nWhatsApp: ${p}\nBusiness type: ${t||'—'}\n\nI'd like to book a free consultation.`;
-  window.open('https://wa.me/919632091371?text='+encodeURIComponent(msg),'_blank');
+
+// Popup Form Submission (Standardized)
+function handlePopupSubmit(){
+  const name = document.getElementById('popup-name').value;
+  const phone = document.getElementById('popup-phone').value;
+  if(!name || !phone) return alert('Please fill in required fields');
+  
+  const msg = `Hi Numero Uno! I want a free consultation.\n\nName: ${name}\nPhone: ${phone}\nFrom: Clients Page Popup`;
+  window.open(`https://wa.me/919632091371?text=${encodeURIComponent(msg)}`, '_blank');
+  document.getElementById('popup-overlay').classList.remove('open');
 }
 </script>
-<a href="https://wa.me/919632091371?text=Hi%2C+I+want+to+grow+my+business+online" class="wa-float" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 448 512" fill="#FFFFFF"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg></a>
+
+<!-- ===== FIXED SIDE LEAD TABS (desktop) ===== -->
+<div class="side-tabs">
+  <a href="https://wa.me/919632091371?text=Hi+Numero+Uno%2C+I+want+to+grow+my+business+online" class="side-tab side-tab-wa" target="_blank"><svg width="20" height="20" viewBox="0 0 448 512" fill="#FFFFFF"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg>WhatsApp Us</a>
+  <a href="free-audit.html" class="side-tab side-tab-audit">Get AI Audit</a>
+  <button class="side-tab side-tab-consult" onclick="document.getElementById('popup-overlay').classList.add('open')">Free Consultation</button>
+</div>
+
+<!-- ===== WA FLOAT (desktop) ===== -->
+<a href="https://wa.me/919632091371?text=Hi+Numero+Uno%2C+I+want+to+grow+my+business+online" class="wa-float" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 448 512" fill="#FFFFFF"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg></a>
+
+<!-- ===== STICKY MOBILE BAR ===== -->
+<div class="sticky-mobile-bar">
+  <div class="smb-text"><strong>Get more customers now</strong>Free consultation · Live in 7 days</div>
+  <div class="smb-btns">
+    <a href="https://wa.me/919632091371" class="smb-wa" target="_blank"><svg width="20" height="20" viewBox="0 0 448 512" fill="#FFFFFF"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg></a>
+    <a href="free-audit.html" class="smb-audit">Audit ₹199</a>
+  </div>
+</div>
+
+<!-- ===== LEAD POPUP ===== -->
+<div class="popup-overlay" id="popup-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="popup-box">
+    <button class="popup-close" onclick="document.getElementById('popup-overlay').classList.remove('open')">×</button>
+    <div class="popup-head">
+      <h3>Book a free consultation</h3>
+      <p>Tell us about your business. We'll call within 2 hours with honest advice on what will work — no pitch, no pressure.</p>
+    </div>
+    <div class="popup-form">
+      <input class="form-input" type="text" id="popup-name" placeholder="Your name *">
+      <input class="form-input" type="tel" id="popup-phone" placeholder="WhatsApp number *">
+      <button class="popup-submit" onclick="handlePopupSubmit()">Get My Free Strategy Call →</button>
+      <p style="font-size:11px;color:var(--mt);text-align:center;margin-top:12px">Takes 30 seconds · Directly to our founder</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>

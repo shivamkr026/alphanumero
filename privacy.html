@@ -50,26 +50,67 @@ nav{position:sticky;top:0;z-index:200;height:64px;display:flex;align-items:cente
 .prose p,.prose li{font-size:14px;color:var(--tx2);line-height:1.8;margin-bottom:12px}
 .prose ul{padding-left:20px;margin-bottom:12px}
 .prose a{color:var(--lime);text-decoration:underline;text-underline-offset:2px}
-footer{border-top:1px solid var(--bd);padding:48px 0 26px;background:var(--g1)}
-.fc{max-width:1140px;margin:0 auto;padding:0 28px}
+
+/* --- Fixed Floating Elements & Sticky Mobile Bar --- */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:195;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;box-shadow:0 4px 24px rgba(45,212,200,.30);transition:transform .25s}
+.wa-float:hover{transform:scale(1.1)}
+
+.side-tabs{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:190;display:flex;flex-direction:column;gap:3px}
+.side-tab{writing-mode:vertical-rl;text-orientation:mixed;padding:16px 8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border:none;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;border-radius:4px 0 0 4px}
+.side-tab-wa{background:#25D366}.side-tab-wa svg{transform:rotate(90deg)}
+.side-tab-audit{background:var(--yellow);color:#000}
+.side-tab-consult{background:var(--lime);color:#000}
+.side-tab:hover{padding-right:14px}
+
+.sticky-mobile-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(8,10,14,.96);backdrop-filter:blur(15px);border-top:1px solid var(--bd);display:none;align-items:center;justify-content:space-between;padding:10px 16px;z-index:200}
+.smb-text{font-size:11.5px;color:var(--tx2);line-height:1.3}.smb-text strong{display:block;color:var(--wht);font-size:13px}
+.smb-btns{display:flex;gap:8px}.smb-wa{background:#25D366;width:38px;height:38px;border-radius:6px;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.smb-audit{background:var(--yellow);color:#000;padding:0 12px;border-radius:6px;font-size:12px;font-weight:700;display:flex;align-items:center;text-decoration:none}
+
+/* --- Lead Popup --- */
+.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:300;display:none;align-items:center;justify-content:center;padding:16px}
+.popup-overlay.open{display:flex}
+.popup-box{background:var(--g1);border:1px solid var(--bd);border-radius:16px;width:100%;max-width:440px;position:relative;padding:32px;overflow:hidden}
+.popup-close{position:absolute;top:16px;right:16px;width:32px;height:32px;background:var(--g2);border:1px solid var(--bd);border-radius:50%;color:var(--tx2);display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;border:none}
+.popup-head{text-align:center;margin-bottom:24px}
+.popup-head h3{font-family:var(--fh);font-size:24px;font-weight:800;color:var(--wht);margin-bottom:8px}
+.popup-head p{font-size:14px;color:var(--tx2);line-height:1.6}
+.popup-form{display:flex;flex-direction:column;gap:12px}
+.form-input{background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:8px;padding:14px;color:var(--wht);font-size:14px;outline:none;transition:border-color .25s;width:100%}
+.form-input:focus{border-color:var(--lime)}
+.popup-submit{background:var(--lime);color:#000;font-weight:700;padding:16px;border-radius:8px;border:none;cursor:pointer;margin-top:8px}
+
+/* --- Standardized Footer --- */
+footer{border-top:1px solid var(--bd);padding:48px 0 26px;background:var(--g1);margin-top:80px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:32px}
-.footer-logo{font-family:var(--fh);font-size:17px;font-weight:800;color:var(--wht);text-decoration:none;letter-spacing:-.012em;display:block;margin-bottom:9px}.footer-logo b{color:var(--lime)}
-.footer-desc{font-size:13px;color:var(--tx2);line-height:1.7;max-width:255px;margin-bottom:14px}
-.footer-contact{font-size:12.5px;color:var(--tx2);line-height:1.9}.footer-contact a{color:var(--lime);text-decoration:none}
+.footer-logo{font-family:var(--fh);font-size:17px;font-weight:800;color:var(--wht);text-decoration:none;letter-spacing:-.012em;display:block;margin-bottom:9px}
+.footer-logo b{color:var(--lime)}
+.footer-desc{font-size:13px;color:var(--tx2);line-height:1.7;max-width:255px;margin-bottom:18px}
+.footer-contact{display:flex;flex-direction:column;gap:12px}
+.footer-contact-item{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--tx2);line-height:1.4}
+.fci-icon{width:32px;height:32px;border-radius:50%;background:rgba(45,212,200,.10);border:1px solid rgba(45,212,200,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fci-icon svg{width:16px;height:16px;stroke:var(--lime)}
+.footer-contact-item a{color:var(--lime);text-decoration:none}
 .footer-col h5{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mt);margin-bottom:11px}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.footer-col a{font-size:13px;color:var(--tx2);text-decoration:none}.footer-col a:hover{color:var(--lime)}
-.footer-bottom{border-top:1px solid var(--bd);padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-col a{font-size:13px;color:var(--tx2);text-decoration:none}
+.footer-col a:hover{color:var(--lime)}
+.footer-bottom{border-top:1px solid var(--bd);padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:32px}
 .footer-bottom p{font-size:12px;color:var(--mt)}
-.footer-legal{display:flex;gap:14px}.footer-legal a{font-size:12px;color:var(--mt);text-decoration:none}
-.waf{position:fixed;bottom:24px;right:24px;z-index:195;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;box-shadow:0 4px 24px rgba(45,212,200,.30);transition:transform .25s}.waf:hover{transform:scale(1.1)}
-@media(max-width:900px){nav .nm,.nr{display:none}.ham{display:flex}}
-@media(max-width:768px){.c{padding:0 16px}.prose{padding:24px;margin:28px auto 40px}.footer-grid{grid-template-columns:1fr}}
+.footer-legal{display:flex;gap:14px}
+.footer-legal a{font-size:12px;color:var(--mt);text-decoration:none}
 
-@media(max-width:1024px){
-  .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:900px){nav .nm,.nr{display:none}.ham{display:flex}}
+@media(max-width:768px){
+  .c{padding:0 16px}
+  .prose{padding:24px;margin:28px auto 40px}
+  .sticky-mobile-bar{display:flex}
+  .wa-float{display:none}
+  .footer-grid{grid-template-columns:1fr}
 }
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:40px}}
 </style>
+
 
   
   
@@ -84,97 +125,73 @@ footer{border-top:1px solid var(--bd);padding:48px 0 26px;background:var(--g1)}
   <!-- SEO & Social Tags -->
                 </head>
 <body>
-<nav>
-  <a href="index.html" class="logo">Numero <b>Uno</b></a>
-  <div class="nm"><a href="index.html">Home</a><a href="services.html">Services & Pricing</a><a href="clients.html">Client Results</a><a href="about.html">About Us</a><a href="free-audit.html">AI Audit</a></div>
-  <div class="nr"><a href="https://wa.me/919632091371" class="nwa" target="_blank"><svg width="20" height="20" viewBox="0 0 448 512" fill="#25D366"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg>WhatsApp</a><a href="contact.html" class="nau">Get Started</a></div>
-  <button class="ham" onclick="document.getElementById('mm').classList.toggle('on')"><span></span><span></span><span></span></button>
-</nav>
-<div class="mm" id="mm"><a href="index.html">Home</a><a href="services.html">Services & Pricing</a><a href="clients.html">Client Results</a><a href="about.html">About Us</a><a href="free-audit.html">AI Audit</a><a href="contact.html">Get Started</a><a href="https://wa.me/919632091371" style="color:#2DD4C8;font-weight:600"><svg width="20" height="20" viewBox="0 0 448 512" fill="#25D366"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg>WhatsApp Us</a></div>
-<a href="https://wa.me/919632091371" class="waf" target="_blank"><svg width="20" height="20" viewBox="0 0 448 512" fill="#25D366"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg></a>
-
-<div class="c">
-<div class="prose">
-<h1>Privacy Policy</h1>
-<span class="date">Effective Date: March 2026</span>
-
-<p>Numero Uno Marketing Pvt. Ltd. ("Company", "we", "us", or "our") is committed to protecting the privacy of visitors to our website alphanumerouno.in ("Site") and our clients. This Privacy Policy explains how we collect, use, disclose, and safeguard your information.</p>
-
-<h2>1. Information We Collect</h2>
-<p>We may collect the following types of information:</p>
-<ul>
-<li><strong>Personal Information:</strong> Name, email address, phone number, WhatsApp number, business name, business type, and location that you voluntarily provide when filling out forms on our Site.</li>
-<li><strong>Usage Data:</strong> IP address, browser type, pages visited, time spent on pages, referring URL, and other diagnostic data collected automatically.</li>
-<li><strong>Cookies:</strong> We use cookies and similar tracking technologies to track activity on our Site and hold certain information. You can instruct your browser to refuse all cookies or indicate when a cookie is being sent.</li>
-</ul>
-
-<h2>2. How We Use Your Information</h2>
-<p>We use the information we collect for the following purposes:</p>
-<ul>
-<li>To provide, maintain, and improve our services</li>
-<li>To process your audit requests and service enquiries</li>
-<li>To communicate with you about our services, promotions, and updates</li>
-<li>To generate and deliver your AI audit report</li>
-<li>To respond to your enquiries and support requests</li>
-<li>To analyse usage patterns and improve our website and services</li>
-<li>To comply with legal obligations</li>
-</ul>
-
-<h2>3. Information Sharing</h2>
-<p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
-<ul>
-<li><strong>Service Providers:</strong> With trusted third-party companies that assist us in operating our website, conducting our business, or serving our users (e.g., hosting providers, analytics tools)</li>
-<li><strong>Legal Requirements:</strong> When required by law, regulation, or legal process</li>
-<li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
-</ul>
-
-<h2>4. Data Security</h2>
-<p>We implement appropriate technical and organisational measures to protect your personal information against unauthorised access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure.</p>
-
-<h2>5. Data Retention</h2>
-<p>We retain your personal information only for as long as necessary to fulfil the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
-
-<h2>6. Your Rights</h2>
-<p>You have the right to:</p>
-<ul>
-<li>Access the personal data we hold about you</li>
-<li>Request correction of inaccurate data</li>
-<li>Request deletion of your data (subject to legal obligations)</li>
-<li>Opt out of marketing communications at any time</li>
-</ul>
-
-<h2>7. Third-Party Links</h2>
-<p>Our Site may contain links to third-party websites (e.g., WhatsApp, Google Maps, Instagram). We are not responsible for the privacy practices or content of these external sites. We encourage you to read their privacy policies.</p>
-
-<h2>8. Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Effective Date" above.</p>
-
-<h2>9. Contact Us</h2>
-<p>If you have any questions about this Privacy Policy, please contact us:</p>
-<ul>
-<li>Email: <a href="mailto:contact@alphanumerouno.digital">contact@alphanumerouno.digital</a></li>
-<li>Phone: <a href="tel:+919632091371">+91 96320 91371</a></li>
-<li>Address: No.63, Katha No.6, Agara, Thataguni, Bangalore — 560082, Karnataka, India</li>
-</ul>
-</div>
+<div class="side-tabs">
+  <a href="https://wa.me/919632091371?text=Hi%2C+I+need+help+with+my+digital+marketing" class="side-tab side-tab-wa" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg>
+    WhatsApp
+  </a>
+  <a href="free-audit.html" class="side-tab side-tab-audit">AI Audit</a>
+  <button onclick="openPopup()" class="side-tab side-tab-consult">Free Consultation</button>
 </div>
 
-<!-- ===== FOOTER ===== -->
+<div class="sticky-mobile-bar">
+  <div class="smb-text">
+    <strong>Need Growth?</strong>
+    Standard packages from ₹15k
+  </div>
+  <div class="smb-btns">
+    <a href="https://wa.me/919632091371" class="smb-wa" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 448 512" fill="#fff"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg>
+    </a>
+    <a href="free-audit.html" class="smb-audit">Get Free Audit</a>
+  </div>
+</div>
+
+<div class="popup-overlay" id="leadPopup">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()">×</button>
+    <div class="popup-head">
+      <h3>Free Strategy Call</h3>
+      <p>Get a custom roadmap for your business. No obligations.</p>
+    </div>
+    <form class="popup-form" name="privacy-page-strategy-call" data-netlify="true" onsubmit="handlePopupSubmit(event)">
+      <input type="hidden" name="form-name" value="privacy-page-strategy-call">
+      <input type="text" name="name" class="form-input" placeholder="Full Name" required>
+      <input type="tel" name="phone" class="form-input" placeholder="Phone Number" required>
+      <select name="service" class="form-input" required>
+        <option value="">Select Service of Interest</option>
+        <option value="Website">Website Development</option>
+        <option value="Social Media">Social Media Management</option>
+        <option value="Ads">Performance Marketing</option>
+        <option value="SEO">Local SEO Audit</option>
+      </select>
+      <button type="submit" class="popup-submit">Book My Free Call</button>
+      <div class="form-success" style="display:none; padding:16px; background:#d5f5e3; color:#1e8449; border-radius:8px; margin-top:16px; font-size:14px; text-align:center;">
+        Thanks! We'll call you within 24 hours.
+      </div>
+    </form>
+  </div>
+</div>
+
 <footer>
-  <div class="fc">
+  <div class="c">
     <div class="footer-grid">
-      <div>
+      <div class="footer-col">
         <a href="index.html" class="footer-logo">Numero <b>Uno</b> Marketing</a>
-        <p class="footer-desc">Bangalore's #1 growth agency for local service businesses. We turn dental clinics, gyms, cafés, restaurants and schools into the most visible, most-booked business in their area. Results guaranteed by Month 3.</p>
+        <p class="footer-desc">Bangalore's #1 growth agency for local service businesses. We turn dental clinics, gyms, cafés, restaurants and schools into the most visible, most-booked business in their area.</p>
         <div class="footer-contact">
-          <div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7AACA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>No.63, Katha No.6, Agara, Thataguni, Bangalore 560082</div>
-          <div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7AACA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+919632091371">+91 96320 91371</a></div>
-          <div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7AACA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:contact@alphanumerouno.digital">contact@alphanumerouno.digital</a></div>
-        </div>
-        <div style="display:flex;gap:10px;margin-top:14px">
-          <a href="https://wa.me/919632091371" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:6px;background:rgba(37,211,102,.10);border:1px solid rgba(37,211,102,.22);text-decoration:none" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 448 512" fill="#25D366"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg></a>
-          <a href="https://www.linkedin.com/company/numero-uno-marketing-private-limited/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:6px;background:rgba(10,102,194,.10);border:1px solid rgba(10,102,194,.22);text-decoration:none" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-          <a href="mailto:contact@alphanumerouno.digital" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:6px;background:rgba(45,212,200,.10);border:1px solid rgba(45,212,200,.18);text-decoration:none" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2DD4C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+          <div class="footer-contact-item">
+            <div class="fci-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            No.63, Katha No.6, Agara, Thataguni, Bangalore 560082
+          </div>
+          <div class="footer-contact-item">
+            <div class="fci-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <a href="tel:+919632091371">+91 96320 91371</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="fci-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+            <a href="mailto:contact@alphanumerouno.digital">contact@alphanumerouno.digital</a>
+          </div>
         </div>
       </div>
       <div class="footer-col">
@@ -190,8 +207,8 @@ footer{border-top:1px solid var(--bd);padding:48px 0 26px;background:var(--g1)}
       <div class="footer-col">
         <h5>Industries</h5>
         <ul>
-          <li><a href="clients.html#dental">Dental Clinics Bangalore</a></li>
-          <li><a href="clients.html#fitness">Gyms & Fitness Studios</a></li>
+          <li><a href="clients.html#dental">Dental Clinics</a></li>
+          <li><a href="clients.html#fitness">Gyms & Studios</a></li>
           <li><a href="clients.html#restaurant">Cafés & Restaurants</a></li>
           <li><a href="clients.html#education">Schools & Coaching</a></li>
           <li><a href="clients.html">Salons & Beauty</a></li>
@@ -200,16 +217,16 @@ footer{border-top:1px solid var(--bd);padding:48px 0 26px;background:var(--g1)}
       <div class="footer-col">
         <h5>Locations</h5>
         <ul>
-          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+koramangala+bangalore" target="_blank" rel="noopener">Koramangala, Bangalore</a></li>
-          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+indiranagar+bangalore" target="_blank" rel="noopener">Indiranagar, Bangalore</a></li>
-          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+hsr+layout+bangalore" target="_blank" rel="noopener">HSR Layout, Bangalore</a></li>
-          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+whitefield+bangalore" target="_blank" rel="noopener">Whitefield, Bangalore</a></li>
-          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+jayanagar+bangalore" target="_blank" rel="noopener">Jayanagar, Bangalore</a></li>
+          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+koramangala+bangalore" target="_blank" rel="noopener">Koramangala</a></li>
+          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+indiranagar+bangalore" target="_blank" rel="noopener">Indiranagar</a></li>
+          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+hsr+layout+bangalore" target="_blank" rel="noopener">HSR Layout</a></li>
+          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+whitefield+bangalore" target="_blank" rel="noopener">Whitefield</a></li>
+          <li><a href="https://www.google.com/maps/search/digital+marketing+agency+jayanagar+bangalore" target="_blank" rel="noopener">Jayanagar</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Numero Uno Marketing Pvt. Ltd. · GSTIN: 29ABCDE1234F1Z5 · CIN: U72900KA2023PTC123456 · UDYAM: UDYAM-KR-03-0123456</p>
+      <p>© 2026 Numero Uno Marketing Pvt. Ltd.</p>
       <div class="footer-legal">
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
@@ -218,6 +235,36 @@ footer{border-top:1px solid var(--bd);padding:48px 0 26px;background:var(--g1)}
     </div>
   </div>
 </footer>
-<a href="https://wa.me/919632091371?text=Hi%2C+I+want+to+grow+my+business+online" class="wa-float" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 448 512" fill="#FFFFFF"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg></a>
+
+<a href="https://wa.me/919632091371" class="wa-float" target="_blank" rel="noopener">
+  <svg width="24" height="24" viewBox="0 0 448 512" fill="#fff"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.4-.3-8.3 2.4-11.1 2.4-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3.1-3.7-.8-6.9-1.9-9.7-1.1-2.8-9.8-23.6-13.4-32.4-3.5-8.6-7.1-7.4-9.8-7.5-2.5-.1-5.4-.1-8.3-.1s-7.5 1.1-11.5 5.5c-4 4.4-15.4 15.1-15.4 36.8s15.8 42.8 18 45.7c2.2 2.8 31.1 47.4 75.3 66.5 10.5 4.5 18.8 7.3 25.2 9.3 10.6 3.4 20.2 2.9 27.8 1.7 8.5-1.3 26.2-10.7 30-21.1 3.7-10.3 3.7-19.2 2.5-21.1-1.1-1.9-4.2-2.8-9.7-5.5z"/></svg>
+</a>
+
+<script>
+function openPopup(){ document.getElementById('leadPopup').classList.add('open'); }
+function closePopup(){ document.getElementById('leadPopup').classList.remove('open'); }
+window.onclick = function(e){ if(e.target == document.getElementById('leadPopup')) closePopup(); }
+
+function handlePopupSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const successMsg = form.querySelector('.form-success');
+  
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(data).toString(),
+  })
+  .then(() => {
+    successMsg.style.display = 'block';
+    form.reset();
+    setTimeout(closePopup, 3000);
+  })
+  .catch((error) => alert(error));
+}
+</script>
+
 </body>
 </html>
+
