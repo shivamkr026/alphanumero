@@ -256,7 +256,7 @@ section{padding:88px 0;position:relative}
 .apromo-step-n{width:18px;height:18px;border-radius:50%;background:rgba(255,214,0,.12);border:1px solid rgba(255,214,0,.25);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--lime);flex-shrink:0}
 
 /* ============================
-   HASHTAG SOCIAL FEED
+   SOCIAL PROOF FEED
    ============================ */
 .social-feed{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .feed-card{background:var(--g1);border:1px solid var(--bd);border-radius:14px;padding:18px;transition:border-color .2s}
@@ -264,8 +264,7 @@ section{padding:88px 0;position:relative}
 .feed-handle{font-size:11px;font-weight:700;color:var(--lime);margin-bottom:5px}
 .feed-text{font-size:13px;color:var(--tx2);line-height:1.65;margin-bottom:9px}
 .feed-text strong{color:var(--wht)}
-.feed-hashtags{display:flex;flex-wrap:wrap;gap:5px}
-.feed-tag{font-size:11.5px;color:rgba(255,214,0,.55);font-weight:500}
+
 .feed-metrics{display:flex;gap:12px;margin-top:9px;font-size:11px;color:var(--mt)}
 
 /* ============================
@@ -373,30 +372,7 @@ footer{border-top:1px solid var(--bd);padding:48px 0 26px;background:var(--g1)}
 .footer-legal{display:flex;gap:14px}
 .footer-legal a{font-size:12px;color:var(--mt);text-decoration:none}
 
-/* ============================
-   RESPONSIVE
-   ============================ */
-@media(max-width:1024px){
-  .hero-grid{grid-template-columns:1fr}
-  .audit-card,.side-tabs{display:none}
-  .apromo-grid{grid-template-columns:1fr}
-  .apromo-right{display:none}
-  .pricing-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:768px){
-  .nav-links,.nav-actions{display:none}
-  .nav-ham{display:flex}
-  .bento{grid-template-columns:1fr}
-  .bento-cell.span2{grid-column:1}
-  .industry-grid{grid-template-columns:1fr}
-  .social-feed{grid-template-columns:1fr}
-  .seo-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
-  .sticky-mobile-bar{display:flex}
-  .wa-float{display:none}
-  section{padding:56px 0}
-  .container{padding:0 16px}
-  .pricing-grid{grid-template-columns:1fr}
-}
+
 
 /* ═══ ANIMATIONS ═══════════════════════════════════════════════ */
 @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
@@ -470,7 +446,7 @@ footer{border-top:1px solid var(--bd);padding:48px 0 26px;background:var(--g1)}
 .orbit-ring{animation:spin-slow 12s linear infinite;transform-origin:center}
 .orbit-dot{animation:orbitDot 4s linear infinite}
 
-@media(max-width:768px){.hero-notifs{display:none}}
+
 
 /* ══════════════════════════════════════════
    CARTOON CHARACTERS & ANIMATIONS
@@ -532,42 +508,50 @@ footer{border-top:1px solid var(--bd);padding:48px 0 26px;background:var(--g1)}
 /* Industry emoji bounce */
 .ic-emoji{display:inline-block;animation:bounce2 2.5s ease-in-out infinite}
 
-/* ── MOBILE TOUCH & RESPONSIVE FIXES ── */
-@media(max-width:768px){
-  /* Ensure all tap targets are 44px minimum */
-  a,button,.btn-lime,.btn-ghost,.nau,.nwa{min-height:44px;display:inline-flex;align-items:center}
-  /* Full-width CTAs on mobile */
-  .btn-lime,.btn-ghost{width:100%;justify-content:center;text-align:center}
-  .hero-btns{flex-direction:column;gap:10px}
-  /* Prevent horizontal overflow */
-  *{max-width:100%;word-break:break-word}
-  img,svg,video{max-width:100%;height:auto}
-  /* Card grids single column */
-  .pricing-grid,.industry-grid,.bento,.grid-3,.card-row{grid-template-columns:1fr!important}
-  /* Hide heavy desktop-only elements */
-  .side-tabs{display:none!important}
-  /* Table responsive */
-  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
-  /* Bigger base font for readability */
-  body{font-size:15px}
-  /* Padding adjustments */
-  .container,.c{padding-left:18px!important;padding-right:18px!important}
-  section{padding:40px 0}
-}
-@media(max-width:480px){
-  .hero-h1{font-size:clamp(32px,9vw,44px)!important}
-  .section-h2{font-size:clamp(22px,7vw,32px)!important}
-  .bento-num{font-size:clamp(36px,10vw,52px)!important}
-  nav{padding:0 16px}
-}
-/* Smooth scrolling & tap highlight */
-html{-webkit-tap-highlight-color:rgba(45,212,200,.15);scroll-behavior:smooth}
-/* Prevent iOS font size adjustment */
-body{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-
+/* ── RESPONSIVE ── */
 @media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr}
+  .audit-card,.side-tabs{display:none}
+  .apromo-grid{grid-template-columns:1fr}
+  .apromo-right{display:none}
+  .pricing-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
 }
+
+@media(max-width:768px){
+  .nav-links,.nav-actions,.hero-notifs,.wa-float{display:none}
+  .nav-ham,.sticky-mobile-bar{display:flex}
+  
+  /* Layout boxes */
+  .pricing-grid, .industry-grid, .bento, .grid-3, .card-row, .social-feed, .seo-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr!important; gap: 24px!important; }
+  .bento-cell.span2{grid-column:1}
+  
+  /* Why Us list mobile fix */
+  .why-item { grid-template-columns: 1fr; gap: 10px; padding: 24px 20px; }
+  .why-badge { align-self: flex-start; white-space: normal; width: fit-content; margin-top: 4px; }
+  
+  /* Global width & spacing */
+  section{padding:48px 0}
+  .container{padding:0 20px!important}
+  *{max-width:100%;word-break:break-word}
+  img,svg,video{max-width:100%;height:auto}
+  
+  /* Tap targets & UI */
+  a,button,.btn-lime,.btn-ghost,.nau,.nwa{min-height:44px;display:inline-flex;align-items:center}
+  .btn-lime,.btn-ghost{width:100%;justify-content:center;text-align:center}
+  .hero-btns{flex-direction:column;gap:12px}
+  .side-tabs{display:none!important}
+  table{display:block;overflow-x:auto}
+  body{font-size:15px}
+}
+
+@media(max-width:480px){
+  .hero-h1{font-size:clamp(30px,10vw,42px)!important; line-height:1.1!important}
+  .section-h2{font-size:clamp(24px,8vw,30px)!important}
+  .bento-num{font-size:clamp(34px,12vw,48px)!important}
+  nav{padding:0 16px}
+}
+
 </style>
 
 
@@ -1365,37 +1349,19 @@ body{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       <div class="feed-card">
         <div class="feed-handle">@kdhcc_dental · Koramangala, Bangalore</div>
         <div class="feed-text">Just crossed <strong>38 new patient enquiries in a single month</strong>. The WhatsApp funnel books consultations at midnight while we sleep. Before Numero Uno we had 8/month. If you run a dental clinic and you're not doing this — you are actively giving patients to your competitor.</div>
-        <div class="feed-hashtags">
-          <span class="feed-tag">#DentalMarketing</span>
-          <span class="feed-tag">#BangaloreDentist</span>
-          <span class="feed-tag">#WhatsAppMarketing</span>
-          <span class="feed-tag">#NumeroUnoMarketing</span>
-          <span class="feed-tag">#PatientGrowth</span>
-        </div>
+
         <div class="feed-metrics"><span>❤️ 847</span><span>💬 93</span><span>📤 212</span></div>
       </div>
       <div class="feed-card">
         <div class="feed-handle">@fitsquatstudio · Indiranagar, Bangalore</div>
         <div class="feed-text">60% occupancy for 2 years straight. Tried 2 agencies and a freelancer. None of it worked. Numero Uno came in Month 1 and <strong>we hit full capacity in exactly 90 days</strong>. The Reels sound like us — our members actually comment "this is so you." That's the difference.</div>
-        <div class="feed-hashtags">
-          <span class="feed-tag">#GymMarketing</span>
-          <span class="feed-tag">#BangaloreFitness</span>
-          <span class="feed-tag">#FitnessMarketing</span>
-          <span class="feed-tag">#ReelsMarketing</span>
-          <span class="feed-tag">#MembershipGrowth</span>
-        </div>
+
         <div class="feed-metrics"><span>❤️ 512</span><span>💬 64</span><span>📤 148</span></div>
       </div>
       <div class="feed-card">
         <div class="feed-handle">@bongbiriyani_blr · Bangalore</div>
         <div class="feed-text"><strong>200 WhatsApp orders this month</strong> — every single one commission-free. Zomato will never see that 28% again. Numero Uno built a WhatsApp ordering system that runs entirely on its own. I'm embarrassed I didn't do this 2 years ago.</div>
-        <div class="feed-hashtags">
-          <span class="feed-tag">#RestaurantMarketing</span>
-          <span class="feed-tag">#BangaloreFood</span>
-          <span class="feed-tag">#ZomatoFree</span>
-          <span class="feed-tag">#DirectOrders</span>
-          <span class="feed-tag">#CafeMarketing</span>
-        </div>
+
         <div class="feed-metrics"><span>❤️ 1,204</span><span>💬 187</span><span>📤 445</span></div>
       </div>
     </div>
